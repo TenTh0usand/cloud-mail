@@ -6,18 +6,18 @@ keep_vars = true
 [observability]
 enabled = true
 
-#[[d1_databases]]
-#binding = "db"			# D1 binding name; do not change
-#database_name = ""		# D1 database name
-#database_id = ""		# D1 database id
+[[d1_databases]]
+binding = "db"			# D1 binding name; do not change
+database_name = "cloud-mail-db"		# D1 database name
+database_id = "6fa975b8-2bfe-45c1-a4d4-c64bbd6d14d8"		# D1 database id
 
-#[[kv_namespaces]]
-#binding = "kv"			# KV binding name; do not change
-#id = ""					# KV namespace id
+[[kv_namespaces]]
+binding = "kv"			# KV binding name; do not change
+id = "9b7c61152a0b42128ef126efe3eaea8d"					# KV namespace id
 
-#[[r2_buckets]]
-#binding = "r2"			# R2 binding name; do not change
-#bucket_name = ""		# R2 bucket name
+[[r2_buckets]]
+binding = "r2"			# R2 binding name; do not change
+bucket_name = "cloud-mail-r2"		# R2 bucket name
 
 #[[send_email]]
 #name = "email"			# Cloudflare Email Sending; used first if configured
@@ -50,10 +50,10 @@ new_sqlite_classes = ["MailHub"]
 #ai_model = ""			# AI model; defaults to @cf/meta/llama-3.1-8b-instruct-fast
 #analysis_cache = false			# Enable analytics cache
 #orm_log = false			# SQL logging
-#domain = []				# Mail domains; multiple allowed, e.g. ["example1.com","example2.com"]
-#admin = ""					# Admin email, e.g. admin@example.com
+domain = ["10k.ren"]				# Mail domains; multiple allowed, e.g. ["example1.com","example2.com"]
+admin = "admin@10k.ren"					# Admin email, e.g. admin@example.com
 #password = ""				# Admin password; used on init if the admin user does not exist
 #jwt_secret = ""			# JWT secret; any random string
 
 [build]
-command = "pnpm --prefix ../mail-vue install && pnpm --prefix ../mail-vue run build"
+command = "npx --yes pnpm --prefix ../mail-vue install && npx --yes pnpm --prefix ../mail-vue run build"
